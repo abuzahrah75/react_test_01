@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Scooter Viewer
 
 A sample app for viewing scooters in a map
@@ -86,3 +87,6 @@ You can also run a linter against the `client` and `server` source codes.
 ```shell
 ./scripts/lint.sh
 ```
+=======
+# react_test_01
+>>>>>>> 8a0d187787edf2c4e9f4b60cf381b13a038b6616
