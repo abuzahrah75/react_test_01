@@ -1,0 +1,9 @@
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.marker {
+    color: 'blue';
+    font-size: 20;
+}

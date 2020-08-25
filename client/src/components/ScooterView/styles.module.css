@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100vh;
+}
+
+.inputRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding: 10px;
+}
+
+.mapWrapper {
+    padding: 10px;
+    flex: 1;
+}

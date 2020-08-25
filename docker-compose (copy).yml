@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  db:
+    image: mariadb:10
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db/migrations:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mysql_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+
+  server:
+    image: node:12
+    user: $NODE_USER
+    command: bash -c "yarn && yarn start"
+    working_dir: /node_app
+    volumes:
+      - ./server:/node_app:cached
+    ports:
+      - 3001:3001
+    depends_on:
+      - db
+
+  client:
+    image: node:12
+    user: $NODE_USER
+    stdin_open: true
+    command: bash -c "yarn && yarn start"
+    working_dir: /node_app
+    volumes:
+      - ./client:/node_app:cached
+    ports:
+      - 3000:3000
+    depends_on:
+      - server

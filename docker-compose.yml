@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  
+  client:
+    image: node:12
+    user: $NODE_USER
+    stdin_open: true
+    command: bash -c "yarn && yarn start"
+    working_dir: /node_app
+    volumes:
+      - ./client:/node_app:cached
+    ports:
+      - 3000:3000
